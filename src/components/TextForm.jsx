@@ -12,6 +12,12 @@ export default function TextForm(props) {
     const handleTrimSpace = () => {
         setText(text.trim());
     }
+    const handleClearSpace = () => {
+        setText('');
+    }
+    const handleDelSpace = () => {
+        setText(text.slice(0, text.length - 1));
+    }
     const handleOnChange = (event) => {
         // console.log("handled on change");
         setText(event.target.value);
@@ -29,6 +35,8 @@ export default function TextForm(props) {
                     <button className="btn btn-primary" onClick={handleUpperCase}>Convert to UpperCase</button>
                     <button className="btn btn-danger" onClick={handleLowerCase}>Convert to LowerCase</button>
                     <button className="btn btn-warning" onClick={handleTrimSpace}>Trim Extra spaces</button>
+                    <button className="btn btn-warning" onClick={handleDelSpace}>Delete</button>
+                    <button className="btn btn-danger" onClick={handleClearSpace}>Clear</button>
                 </div>
             </div>
             <div className="container my-4 text-center">
