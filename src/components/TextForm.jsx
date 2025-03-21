@@ -13,11 +13,12 @@ export default function TextForm(props) {
         setText(text.trim());
     }
     const handleOnChange = (event) => {
-        console.log("handled on change");
+        // console.log("handled on change");
         setText(event.target.value);
     }
     return (
         <>
+            {/* this is the text area container with some buttons */}
             <div className="container">
                 <h1>Analyse the content</h1>
                 <div className="form-floating my-4">
@@ -29,6 +30,14 @@ export default function TextForm(props) {
                     <button className="btn btn-danger" onClick={handleLowerCase}>Convert to LowerCase</button>
                     <button className="btn btn-warning" onClick={handleTrimSpace}>Trim Extra spaces</button>
                 </div>
+            </div>
+            <div className="container my-4 text-center">
+                <h4>{text.length} characters {(text.split(" ").length == 1 && text.length == 0) ? text.split(" ").length = 0 : text.split(" ").length} words</h4>
+                <h4>{(text.split(" ").length == 1 && text.length == 0) ? text.split(" ").length = 0 : text.split(" ").length * 0.008} min to read.</h4>
+            </div>
+            <div className="container my-3">
+                <h2>Preview</h2>
+                <p>{text}</p>
             </div>
         </>
     )
