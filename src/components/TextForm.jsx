@@ -12,6 +12,9 @@ export default function TextForm(props) {
     const handleTrimSpace = () => {
         setText(text.trim());
     }
+    const handleRevSpace = () => {
+        setText(text.split('').reverse().join(''));
+    }
     const handleClearSpace = () => {
         setText('');
     }
@@ -35,6 +38,7 @@ export default function TextForm(props) {
                     <button className="btn btn-primary" onClick={handleUpperCase}>Convert to UpperCase</button>
                     <button className="btn btn-danger" onClick={handleLowerCase}>Convert to LowerCase</button>
                     <button className="btn btn-warning" onClick={handleTrimSpace}>Trim Extra spaces</button>
+                    <button className="btn btn-primary" onClick={handleRevSpace}>Reverse</button>
                     <button className="btn btn-warning" onClick={handleDelSpace}>Delete</button>
                     <button className="btn btn-danger" onClick={handleClearSpace}>Clear</button>
                 </div>
