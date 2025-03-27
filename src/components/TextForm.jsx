@@ -21,6 +21,10 @@ export default function TextForm(props) {
     const handleDelSpace = () => {
         setText(text.slice(0, text.length - 1));
     }
+    const handleSpeak = () => {
+        const speech = new SpeechSynthesisUtterance(text);
+        speechSynthesis.speak(speech);
+    }
     const handleOnChange = (event) => {
         // console.log("handled on change");
         setText(event.target.value);
@@ -41,6 +45,7 @@ export default function TextForm(props) {
                     <button className="btn btn-primary" onClick={handleRevSpace}>Reverse</button>
                     <button className="btn btn-warning" onClick={handleDelSpace}>Delete</button>
                     <button className="btn btn-danger" onClick={handleClearSpace}>Clear</button>
+                    <button className="btn btn-success" onClick={handleSpeak}>Speak</button>
                 </div>
             </div>
             <div className="container my-4 text-center">
