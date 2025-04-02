@@ -23,7 +23,11 @@ export default function TextForm(props) {
     }
     const handleSpeak = () => {
         const speech = new SpeechSynthesisUtterance(text);
-        speechSynthesis.speak(speech);
+        if (text == '') {
+            alert('Type some text in the textArea');
+        }
+        else
+            speechSynthesis.speak(speech);
     }
     const handleOnChange = (event) => {
         // console.log("handled on change");
@@ -45,7 +49,7 @@ export default function TextForm(props) {
                     <button className="btn btn-primary" onClick={handleRevSpace}>Reverse</button>
                     <button className="btn btn-warning" onClick={handleDelSpace}>Delete</button>
                     <button className="btn btn-danger" onClick={handleClearSpace}>Clear</button>
-                    <button className="btn btn-success" onClick={handleSpeak}>Speak</button>
+                    <button className="btn btn-success" onClick={handleSpeak}>🔊</button>
                 </div>
             </div>
             <div className="container my-4 text-center">
